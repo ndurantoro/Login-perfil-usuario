@@ -115,8 +115,18 @@ and open the template in the editor.
               <input class="btn btn-primary" value="Actualizar" type="submit">
             <span></span>
             <input class="btn btn-default" value="Cancel" type="reset">
+            <span></span>
+            <input class="btn btn-danger" value="Cerrar Sesion" type="button" onclick="">
+            
           </div>
         </div>
+      
+
+      
+      
+      
+      
+      
       </form>
     </div>
   </div>
