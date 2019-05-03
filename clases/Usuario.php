@@ -1,11 +1,9 @@
 <?php
-
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 class Usuario{
     private $nomusuario;
     private $nombre;
@@ -14,7 +12,6 @@ class Usuario{
     private $archivo;
     private $id;
     
-
         function __construct($nomusuario, $nombre, $clave, $nomarchivo, $archivo, $id) {
         $this->nomusuario = $nomusuario;
         $this->nombre = $nombre;
@@ -23,55 +20,43 @@ class Usuario{
         $this->archivo = $archivo;
         $this->id = $id;
     }
-
    
 function getNomarchivo() {
         return $this->nomarchivo;
     }
-
     function getArchivo() {
         return $this->archivo;
     }
-
     function getNomusuario() {
         return $this->nomusuario;
     }
-
     function getNombre() {
         return $this->nombre;
     }
-
     function getClave() {
         return $this->clave;
     }
      function getId() {
         return $this->id;
     }
-
     function setId($id) {
         $this->id = $id;
     }
-
-
     function setNomarchivo($nomarchivo) {
         $this->nomarchivo = $nomarchivo;
     }
-
     function setArchivo($archivo) {
         $this->archivo = $archivo;
     }
     function setNomusuario($nomusuario) {
         $this->nomusuario = $nomusuario;
     }
-
     function setNombre($nombre) {
         $this->nombre = $nombre;
     }
-
     function setClave($clave) {
         $this->clave = md5($clave);
     }
-
     function Valida(){
         /*Verficamos la existencia*/
         $db= new DBConnect();
@@ -86,7 +71,6 @@ function getNomarchivo() {
                                  where nomusu=? and clave=?');
         
         $PDOst->execute(array($this->nomusuario,$this->clave));
-
         if ( $row=$PDOst->fetch(PDO::FETCH_OBJ)){
             $this->nombre=$row->nombre;
             $this->archivo=$row->archivo;
@@ -114,7 +98,6 @@ function getNomarchivo() {
                                  where idusuario=?');
         echo $this->id;
         $PDOst->execute(array($this->clave,$this->id));
-
       /*  if ( $row=$PDOst->fetch(PDO::FETCH_OBJ)){
             return true;
         }
@@ -138,7 +121,6 @@ function getNomarchivo() {
                                  where idusuario=?');
         echo $this->id;
         $PDOst->execute(array($this->nomarchivo,$this->archivo,$this->id));
-
       /*  if ( $row=$PDOst->fetch(PDO::FETCH_OBJ)){
             return true;
         }

@@ -2,7 +2,6 @@
 include ("../clases/Usuario.php");
 include ("../lib/constantes.php");
 include ("../lib/db.php");
-
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,7 +16,6 @@ if (!isset($_SESSION["Usuario"])){
     $usuario=$_POST["usuario"];
     $clave=$_POST["clave"];
     $oUsr=new Usuario($usuario, "", $clave,"","","");
-
     if($oUsr->Valida()){
         $_SESSION["Usuario"]=$oUsr; 
     }
@@ -29,11 +27,9 @@ if (!isset($_SESSION["Usuario"])){
 else{
    $oUsr=$_SESSION["Usuario"];  
 }
-
 //echo "PERFECTO ".$oUsr->getNombre();
 //echo "<a href=".URLBASE."CambiarClave.php />Cambiar Clave</a>";
 //echo "<a href=".URLBASE."CerrarSesion.php />Cerrar Sesión</a>";
-
 ?>
 <!DOCTYPE html>
 <!--
@@ -115,18 +111,9 @@ and open the template in the editor.
               <input class="btn btn-primary" value="Actualizar" type="submit">
             <span></span>
             <input class="btn btn-default" value="Cancel" type="reset">
-            <span></span>
-            <input class="btn btn-danger" value="Cerrar Sesion" type="button" onclick="">
-            
+            <input class="btn btn-warning" value="Cerrar Sesion" type="button" onclick="location.href='<?=URLBASE?>/CerrarSesion.php'">
           </div>
         </div>
-      
-
-      
-      
-      
-      
-      
       </form>
     </div>
   </div>

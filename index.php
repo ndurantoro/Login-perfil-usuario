@@ -1,12 +1,15 @@
 <?php
 include("lib/constantes.php");
+if (isset($_SESSION["Usuario"])){
+    header("location:".URLBASE."controladores/AccUsuario.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
-
 SKIN: https://bootsnipp.com/snippets/2X0r
 -->
 <html>
